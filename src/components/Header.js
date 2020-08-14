@@ -9,20 +9,14 @@ function Header() {
   return (
     <div className="header">
       <div className="header__left">
-        {/* Avatars for logged in users*/}
         <Avatar className="header__avatar" alt={"neha"} src="" />
-        {/* Time*/}
         <AccessTimeIcon />
       </div>
       <div className="header__search">
-        {/*search icon */}
         <SearchIcon />
-
-        {/* input*/}
         <input placeholder="search whatever" />
       </div>
       <div className="header-right">
-        {/* help icon */}
         <HelpOutlineIcon />
       </div>
     </div>
