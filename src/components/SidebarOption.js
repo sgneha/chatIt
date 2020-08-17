@@ -5,15 +5,16 @@ import { useHistory } from "react-router-dom";
 function SidebarOption({ Icon, title, id, addChannelOption }) {
   //passing component Icon as props
   const history = useHistory(); //when back or forward a web page
-
+  //pulls out the history
   const selectChannel = () => {
     if (id) {
-      //pulls out the history
-      history.push(`/room/${id}`);
+      //if coming from database
+      history.push(`/room/${id}`); //will push next page to history,force to redirect
     } else {
-      history.push(titile);
+      history.push(title); //will implement it later
     }
   };
+  const addChannel = () => {};
   return (
     <div
       className="sidebarOption"
