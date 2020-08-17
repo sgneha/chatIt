@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/SidebarOption.css";
 import { useHistory } from "react-router-dom";
+import db from "../firebase";
 
 function SidebarOption({ Icon, title, id, addChannelOption }) {
   //passing component Icon as props
@@ -14,7 +15,14 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
       history.push(title); //will implement it later
     }
   };
-  const addChannel = () => {};
+  const addChannel = () => {
+    const channelName = prompt("Please enter the channel name");
+    if (channelName) {
+      db.collection("rooms").add({
+        name: channelName,
+      });
+    }
+  };
   return (
     <div
       className="sidebarOption"
