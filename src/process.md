@@ -7,3 +7,5 @@ In Firestore collection has been set
 
 `npm install react-router-dom`
 Then this step is to swicth between the channels without refresh.
+
+Add channel
