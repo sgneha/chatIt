@@ -4,3 +4,6 @@ This command will pull in all dependencies required for everything to be up and 
 `npm i firebase`
 
 In Firestore collection has been set
+
+`npm install react-router-dom`
+Then this step is to swicth between the channels without refresh.
