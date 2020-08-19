@@ -6,8 +6,9 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import db from "../firebase";
 
 function Chat() {
-  const { roomId } = useParams();
+  const { roomId } = useParams(); //destructuring from the url
   const [roomDetails, setRoomDetails] = useState(null);
+  const [roomMessages, setRoomMessages] = useState(null);
   //destructuring from the url
   useEffect(() => {
     if (roomId) {
@@ -15,7 +16,15 @@ function Chat() {
         .doc(roomId)
         .onSnapshot((snapshot) => setRoomDetails(snapshot.data()));
     }
+    db.collection("rooms")
+      .doc(roomId)
+      .collection("messages")
+      .orderBy("timestamp", "asc")
+      .onSnapshot((snapshot) =>
+        setRoomMessages(snapshot.docs.map((doc) => doc.data()))
+      );
   }, [roomId]);
+  console.log(roomMessages);
   return (
     <div className="chat">
       <div className="chat__header">
