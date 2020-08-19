@@ -40,6 +40,7 @@ function Chat() {
           </p>
         </div>
       </div>
+      <div className="chat_messages">{/* {"Messages"} */}</div>
     </div>
   );
 }
